@@ -24,7 +24,7 @@
 <meta property="og:description" content="备忘录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-09T08:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-08T23:40:42.152Z">
+<meta property="article:modified_time" content="2024-06-09T10:11:12.344Z">
 <meta property="article:author" content="yesandnoandperhaps">
 <meta property="article:tag" content="备忘录">
 <meta name="twitter:card" content="summary_large_image">
@@ -262,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          3.1k 字
         
       </span>
     
@@ -273,7 +273,7 @@
         
         
         
-          17 分钟
+          26 分钟
         
       </span>
     
@@ -703,16 +703,15 @@
 <h3 id="页面布局">页面布局</h3>
 <p><strong>简介</strong></p>
 <ul>
-<li>pack：包装</li>
-<li>grid：网格</li>
-<li>place：位置</li>
+<li><code>pack</code>：包装</li>
+<li><code>grid</code>：网格</li>
+<li><code>place</code>：位置</li>
 </ul>
 <h4 id="pack页面布局">pack页面布局</h4>
-<h5 id="pack属性">pack属性</h5>
 <ul>
-<li><code>-anchor</code>：组件的对齐方式【北<strong>N</strong>、南<strong>S</strong>、西<strong>W</strong>、东<strong>E</strong>、东南<strong>SE</strong>、西南<strong>SW</strong>、东北<strong>NE</strong>、西北<strong>NW</strong>】</li>
-<li><code>-after</code>：将组件置于其他组件之后</li>
-<li><code>-before</code>：将组件置于其他组件之前</li>
+<li><code>-anchor</code>：容器的对齐方式【北<strong>N</strong>、南<strong>S</strong>、西<strong>W</strong>、东<strong>E</strong>、东南<strong>SE</strong>、西南<strong>SW</strong>、东北<strong>NE</strong>、西北<strong>NW</strong>】</li>
+<li><code>-after</code>：将容器置于其他组件之后</li>
+<li><code>-before</code>：将容器置于其他组件之前</li>
 <li><code>-expand</code>：容器在整个窗口上，将容器放置在剩余空闲位置上的中央【包括水平和垂直方向】</li>
 <li><code>-fill</code>：决定容器是否填充，以及填充的方向【X轴<strong>x</strong>、Y轴<strong>y</strong>、全部填充<strong>both</strong>】</li>
 <li><code>-ipadx</code>：容器在X轴上的显示大小</li>
@@ -723,9 +722,100 @@
 <li><strong>side=&quot;left&quot;或side=&quot;right&quot;时，fill=&quot;x&quot;不起作用，只能填充y</strong></li>
 <li><strong>side=“top”,side=&quot;bottom&quot;时，fill=&quot;y&quot;不起作用，只能填充x</strong></li>
 </ul>
+<h4 id="grid页面布局">grid页面布局</h4>
+<ul>
+<li>
+<p><code>row</code>：容器所在行</p>
+</li>
+<li>
+<p><code>column</code>：容器所在列</p>
+</li>
+<li>
+<p><code>-ipadx</code>：容器在X轴上的显示大小</p>
+</li>
+<li>
+<p><code>-ipady</code>：容器在Y轴上的显示大小</p>
+</li>
+<li>
+<p><code>-padx</code>：容器之间在X轴上的外边距</p>
+</li>
+<li>
+<p><code>-pady</code>：容器之间在Y轴上的外边距</p>
+</li>
+<li>
+<p><code>rowspan</code>：容器跨几行</p>
+</li>
+<li>
+<p><code>columnspan</code>：容器跨几列</p>
+</li>
+<li>
+<p><code>sticky</code>：容器的对齐停靠方向【北<strong>N</strong>、南<strong>S</strong>、西<strong>W</strong>、东<strong>E</strong>、东南<strong>SE</strong>、西南<strong>SW</strong>、东北<strong>NE</strong>、西北<strong>NW</strong>】</p>
+</li>
+<li>
+<p><code>grid_bbox(column=None, row=None, col2=None, row2=None)</code>：返回一个有四个元素的元组，用来描述容器内一些或者全部单元的边界。【返回顺序：左上方区域的x坐标，左上方区域的y坐标，宽度，高度】【若只传递了 <code>column</code> 和 <code>row</code> 参数，返回参数描述的是该行列的单元大小】【若传递了 <code>col2</code> 和 <code>row2</code> 参数，返回参数描述的是从 <code>column</code> 列到 <code>col2</code> 列，以及从 <code>row</code> 行到 <code>row2</code> 行总体区域的大小】</p>
+</li>
+<li>
+<p><code>grid_forget()</code>：取消容器显示，容器仍在内存中，再次调用<code>grid()</code>以显示【需重新设置<code>grid(option)</code>选项】</p>
+</li>
+<li>
+<p><code>grid_info()</code>：返回容器各个<code>option</code>组成的<code>dict</code></p>
+</li>
+<li>
+<p><code>grid_location(x, y)</code>：设定容器在屏幕中相对于容纳单元的（x，y）坐标，并返回<code>grid</code>系统中的哪个单元包含了该坐标（column，row）</p>
+</li>
+<li>
+<p><code>grid_propagate()</code>：正常情况下，所有容器都会根据内容自动调整大小【固定容器大小： <code>w.grid_propagate(0)</code>】</p>
+</li>
+<li>
+<p><code>grid_remove()</code>：取消容器显示，容器仍在内存中，会存储<code>grid(option)</code>，再次调用<code>grid()</code>以显示</p>
+</li>
+<li>
+<p><code>grid_size()</code>：返回有两个元素的元组，分别表示容器所在的列数和行数。</p>
+</li>
+<li>
+<p><code>w.grid_slaves(row=None, column=None)</code>：返回一组由容器管理容器的<code>list</code>。若未提供任何参数，返回包含所有容器的<code>list</code>【提供 <code>row</code> 参数，返回该行所有容器，提供 <code>column</code> 参数，则返回该列所有容器】</p>
+</li>
+</ul>
+<hr>
+<h4 id="place">place</h4>
+<ul>
+<li>
+<p><code>anchor</code>：控制容器在place分配的空间中的位置【北<strong>N</strong>、南<strong>S</strong>、西<strong>W</strong>、东<strong>E</strong>、东南<strong>SE</strong>、西南<strong>SW</strong>、东北<strong>NE</strong>、西北<strong>NW</strong>、中央<strong>CENTER</strong>】【默认<strong>NW</strong>】</p>
+</li>
+<li>
+<p><code>bordermode</code>：指定边框模式【内部<strong>INSIDE</strong>、外部<strong>OUTSIDE</strong>】【默认<strong>INSIDE</strong>】</p>
+</li>
+<li>
+<p><code>height</code>：指定该容器的高度【像素】</p>
+</li>
+<li>
+<p><code>in_</code>：将该容器放到该选项指定的容器中【指定的容器必须是该容器的父容器】</p>
+</li>
+<li>
+<p><code>relheight</code>：指定该容器相对于父容器的高度【取值范围是0.0~1.0】</p>
+</li>
+<li>
+<p><code>relwidth</code>：指定该容器相对于父容器的宽度【取值范围是0.0~1.0】</p>
+</li>
+<li>
+<p><code>relx</code>：指定该容器相对于父容器的水平位置【取值范围是0.0~1.0】</p>
+</li>
+<li>
+<p><code>rely</code>：指定该容器相对于父容器的垂直位置【取值范围是0.0~1.0】</p>
+</li>
+<li>
+<p><code>width</code>：指定该容器的宽度【像素】</p>
+</li>
+<li>
+<p><code>x</code>：指定该容器的水平偏移位置【像素】【若同时指定了relx选项，优先实现relx选项】</p>
+</li>
+<li>
+<p><code>y</code>：指定该组件的垂直偏移位置【像素】【若同时指定了rely选项，优先实现rely选项】</p>
+</li>
+</ul>
 <h3 id="按钮">按钮</h3>
 <h4 id="按钮-起步">按钮-起步</h4>
-<p>使用**Button()**函数</p>
+<p>使用**Button()**类</p>
 <p><strong>例如：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *<br><br>root = Tk()<br><br>b = Button(root, text=<span class="hljs-string">&#x27;&#x27;</span>)<br>b.pack()<br><br>root.mainloop()<br></code></pre></td></tr></table></figure>
 <h4 id="按钮属性">按钮属性</h4>
@@ -740,6 +830,26 @@
 </ul>
 <p><strong>例如：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *<br><br>root = Tk()<br><br>b = Button(root, text=<span class="hljs-string">&#x27;yes&#x27;</span>, bg=<span class="hljs-string">&#x27;red&#x27;</span>, fg=<span class="hljs-string">&#x27;white&#x27;</span>, font=(<span class="hljs-string">&#x27;宋体&#x27;</span>, <span class="hljs-number">16</span>), command=callback)<br>b.pack()<br><br>root.mainloop()<br></code></pre></td></tr></table></figure>
+<h3 id="标签">标签</h3>
+<h4 id="标签-起步">标签-起步</h4>
+<p>使用**Label()**类</p>
+<p><strong>例如：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *<br><br>root = Tk()<br><br>label = Label(root, text=<span class="hljs-string">&quot;Hello World!&quot;</span>)<br>label.pack()<br><br>b = Button(root, text=<span class="hljs-string">&#x27;yes&#x27;</span>, bg=<span class="hljs-string">&#x27;red&#x27;</span>, fg=<span class="hljs-string">&#x27;white&#x27;</span>, font=(<span class="hljs-string">&#x27;宋体&#x27;</span>, <span class="hljs-number">16</span>), command=callback)<br>b.pack()<br><br>root.mainloop()<br></code></pre></td></tr></table></figure>
+<h4 id="标签属性">标签属性</h4>
+<ul>
+<li><code>text</code>：标签文字</li>
+<li><code>relief</code>：标签样式，设置控件3D效果【平面<strong>FLAT</strong>、凹陷<strong>SUNKEN</strong>、凸起<strong>RAISED</strong>、凹槽<strong>GROOVE</strong>、盆地<strong>RIDGE</strong>】</li>
+<li><code>bg</code>：标签背景色</li>
+<li><code>fg</code>：标签前景色</li>
+<li><code>bd</code>：标签文字边框宽度【需要relief结合使用才会凸显效果】</li>
+<li><code>font</code>：标签文字字体设置【<code>font=(&quot;字体&quot;, &quot;字号&quot;, &quot;样式&quot;, &quot;样式&quot;......)</code>】【样式：粗体<strong>bold</strong>、斜体<strong>italic</strong>、下划线<strong>underline=1</strong>、删除线<strong>overstrike=1</strong>】<strong>下划线和删除线需要重新设置字体</strong></li>
+<li><code>justify</code>：标签文字对齐方式【左<strong>LEFT</strong>、右<strong>RIGHT</strong>、中央** CENTER**】</li>
+<li><code>underline</code>：下划线【取值即是带下划线的字符串索引，为 0 时，第一个字符带下划线，为 1 时，第两个字符带下划线，以此类推】</li>
+<li><code>wraplength</code>：按钮达到限制的屏幕单元后换行显示</li>
+<li><code>height</code>：字体高度【需要relief结合使用才会凸显效果】</li>
+<li><code>wideth</code>：字体宽度【需要relief结合使用才会凸显效果】</li>
+<li><code>image</code>：标签插入图片【插入的图片必须有PhotImage转换格式后才能插入，并且转换的图片格式必须是.gif格式】</li>
+</ul>
 
                 
               </div>
