@@ -23,9 +23,26 @@
   
   
   <entry>
-    <title>Python</title>
+    <title>Python Tkinter汇总介绍</title>
     <link href="/2024/06/09/py/"/>
     <url>/2024/06/09/py/</url>
+    
+    
+    
+    <tags>
+      
+      <tag>备忘录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Python内置函数</title>
+    <link href="/2024/06/09/py2/"/>
+    <url>/2024/06/09/py2/</url>
     
     
     

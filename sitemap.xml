@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yesandnoandperhaps.github.io/2024/06/09/py/</loc>
+    
+    <lastmod>2024-06-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yesandnoandperhaps.github.io/2024/05/25/wy3/</loc>
+    
+    <lastmod>2024-06-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yesandnoandperhaps.github.io/2024/06/10/wy6/</loc>
     
     <lastmod>2024-06-10</lastmod>
@@ -11,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://yesandnoandperhaps.github.io/2024/06/09/py/</loc>
+    <loc>https://yesandnoandperhaps.github.io/2024/06/09/py2/</loc>
     
     <lastmod>2024-06-10</lastmod>
     
@@ -155,15 +173,6 @@
   </url>
   
   <url>
-    <loc>https://yesandnoandperhaps.github.io/2024/05/25/wy3/</loc>
-    
-    <lastmod>2024-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yesandnoandperhaps.github.io/2024/05/25/wy2/</loc>
     
     <lastmod>2024-05-27</lastmod>
@@ -250,13 +259,6 @@
   </url>
   
   <url>
-    <loc>https://yesandnoandperhaps.github.io/tags/%E6%96%87%E5%AD%A6%E5%B8%B8%E8%AF%86/</loc>
-    <lastmod>2024-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yesandnoandperhaps.github.io/tags/%E5%AF%B9%E8%81%94%E9%9B%86/</loc>
     <lastmod>2024-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -264,7 +266,7 @@
   </url>
   
   <url>
-    <loc>https://yesandnoandperhaps.github.io/tags/%E8%AF%97%E9%9B%86/</loc>
+    <loc>https://yesandnoandperhaps.github.io/tags/%E6%96%87%E5%AD%A6%E5%B8%B8%E8%AF%86/</loc>
     <lastmod>2024-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -272,6 +274,13 @@
   
   <url>
     <loc>https://yesandnoandperhaps.github.io/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2024-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yesandnoandperhaps.github.io/tags/%E8%AF%97%E9%9B%86/</loc>
     <lastmod>2024-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
