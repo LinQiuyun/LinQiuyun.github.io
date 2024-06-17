@@ -18,22 +18,22 @@
   
     <meta name="description" content="基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Minecraft-java-Forge-mod开发">
-<meta property="og:url" content="https://yesandnoandperhaps.github.io/2024/06/11/mcjava/index.html">
+<meta property="og:title" content="极值-最值">
+<meta property="og:url" content="https://yesandnoandperhaps.github.io/2024/06/17/sx3/index.html">
 <meta property="og:site_name" content="yesandnoandperhaps">
 <meta property="og:description" content="基础">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-11T11:00:20.000Z">
-<meta property="article:modified_time" content="2024-06-14T14:22:22.628Z">
+<meta property="article:published_time" content="2024-06-17T11:00:20.000Z">
+<meta property="article:modified_time" content="2024-06-17T18:39:49.839Z">
 <meta property="article:author" content="yesandnoandperhaps">
-<meta property="article:tag" content="备忘录">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Minecraft-java-Forge-mod开发 - yesandnoandperhaps</title>
+  <title>极值-最值 - yesandnoandperhaps</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -44,6 +44,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -239,7 +241,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Minecraft-java-Forge-mod开发"></span>
+            <span id="subtitle" data-typed-text="极值-最值"></span>
           
         </div>
 
@@ -250,8 +252,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-11 19:00" pubdate>
-          2024年6月11日 晚上
+        <time datetime="2024-06-17 19:00" pubdate>
+          2024年6月17日 晚上
         </time>
       </span>
     
@@ -262,7 +264,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          371 字
+          491 字
         
       </span>
     
@@ -273,7 +275,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -310,43 +312,91 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Minecraft-java-Forge-mod开发</h1>
+            <h1 id="seo-header">极值-最值</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="有用的链接">有用的链接</h2>
-<p><a target="_blank" rel="noopener" href="https://mouse0w0.github.io/MinecraftDeveloperGuide/#java%E5%9F%BA%E7%A1%80">MinecraftDeveloperGuide</a></p>
-<h2 id="开始">开始</h2>
-<p><strong>1.0.</strong> 你需要基本的英语水平</p>
-<p><strong>1.1.</strong> <a target="_blank" rel="noopener" href="https://files.minecraftforge.net">Minecraft Forge</a>下载MDK（全称Mod Development Kit）</p>
-<p><strong>1.2.</strong> 下载好后，打开对应文件夹IDE应该会自动下载导入配置开发环境，若未自动配置开发环境，请点击运行<code>build.gradle</code></p>
-<p><strong>过程许久，国内网络凭运气成功，一般几个小时到几天是常有的事</strong></p>
-<h2 id="基本">基本</h2>
-<h3 id="gradle-properties">gradle.properties</h3>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">由此为起之上,多不变</span><br><br><span class="hljs-attr">mod_id</span>=<span class="hljs-string">mod_id|它是唯一的</span><br><br><span class="hljs-attr">mod_name</span>=<span class="hljs-string">mod名</span><br><br><span class="hljs-attr">mod_license</span>=<span class="hljs-string">许可证</span><br><br><span class="hljs-attr">mod_version</span>=<span class="hljs-string">mod的版本</span><br><br><span class="hljs-attr">mod_group_id</span>=<span class="hljs-string">mod的组id，它只在作为工件发布到maven仓库时才重要,应匹配用于mod源的基本包</span><br><br><span class="hljs-attr">mod_authors</span>=<span class="hljs-string">作者名</span><br><br><span class="hljs-attr">mod_description</span>=<span class="hljs-string">mod简介</span><br></code></pre></td></tr></table></figure>
-<h3 id="mods-toml">mods.toml</h3>
-<p>gradle.properties的设置,也可在<code>mods.toml</code>中设置</p>
-<ul>
-<li><code>modId</code>:mod_id|它是唯一的</li>
-<li><code>version</code>:mod的版本</li>
-<li><code>displayName</code>:mod名</li>
-<li><code>displayURL</code>:mod介绍网页的链接</li>
-<li><code>logoFile</code>:mod图标</li>
-<li><code>credits</code>:mod致谢名单</li>
-<li><code>authors</code>:mod作者名单</li>
-<li><code>description</code>:mod简介</li>
-</ul>
-<h3 id="Mod">Mod</h3>
-<p>下载好后会自带一个***Mod文件<br>
-建议改成如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Mod(Mod.MOD_ID)</span><br><span class="hljs-keyword">public</span> class 文件夹名<br>&#123;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">MOD_ID</span> <span class="hljs-operator">=</span> 与modId中的设置相同;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">LOGGER</span> <span class="hljs-operator">=</span> LogUtils.getLogger();<br><br>    <span class="hljs-keyword">public</span> 随便取() &#123;<br>        <span class="hljs-type">IEventBus</span> <span class="hljs-variable">modEventBus</span> <span class="hljs-operator">=</span> FMLJavaModLoadingContext.get().getModEventBus();<br><br>        在此注册你的东西<br><br>        MinecraftForge.EVENT_BUS.register(<span class="hljs-built_in">this</span>);<br>        modEventBus.addListener(<span class="hljs-built_in">this</span>::addCreative);<br>    &#125;<br><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addCreative</span><span class="hljs-params">(BuildCreativeModeTabContentsEvent event)</span><br>    &#123;<br>    &#125;<br><br>    <span class="hljs-meta">@SubscribeEvent</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onServerStarting</span><span class="hljs-params">(ServerStartingEvent event)</span><br>    &#123;<br>    &#125;<br><br><br>    <span class="hljs-meta">@Mod</span>.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ClientModEvents</span><br>    &#123;<br>        <span class="hljs-meta">@SubscribeEvent</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClientSetup</span><span class="hljs-params">(FMLClientSetupEvent event)</span><br>        &#123;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="第一个物品">第一个物品</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> class 文件名 &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> DeferredRegister&lt;Item&gt; 随便定<span class="hljs-number">1</span> =<br>            DeferredRegister.create(ForgeRegistries.ITEMS, Mod.MOD_ID);<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> RegistryObject&lt;Item&gt; 随便定<span class="hljs-number">2</span> = 随便定<span class="hljs-number">1.</span>register(随便定<span class="hljs-number">3</span>-必须小写,<br>            () -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">Item</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Item</span>.Properties()));<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">register</span><span class="hljs-params">(IEventBus eventBus)</span> &#123;<br>        ITEMS.register(eventBus);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<div class="note note-danger">
-            <p>暂收</p>
+                <h2 id="极值"><a href="#极值" class="headerlink" title="极值"></a>极值</h2><script type="math/tex; mode=display">
+f(x)在U(x_0)有定义,\forall x\in\mathring{U}</script><script type="math/tex; mode=display">
+若f(x)<f(x_0)\Rightarrow f(x_0)是极大值,x=x_0是极大点</script><script type="math/tex; mode=display">
+若f(x)>f(x_0)\Rightarrow f(x_0)是极小值,x=x_0是极小点</script><h3 id="定理一"><a href="#定理一" class="headerlink" title="定理一"></a>定理一</h3><script type="math/tex; mode=display">
+f(x)在x_0处可导,若f(x)在x_0处取得极值\Rightarrow f'(x_0)=0</script><div class="note note-danger">
+            <script type="math/tex; mode=display">f'(x_0)=0\nRightarrow f(x)在x_0处取得极值</script>
           </div>
-
+<div class="note note-success">
+            <p>证明方法：费马引理，请读者自行验证</p>
+          </div>
+<h3 id="定理二"><a href="#定理二" class="headerlink" title="定理二"></a>定理二</h3><script type="math/tex; mode=display">
+设f(x)在x_0处连续，且\mathring{U}(x_0,\delta)可导</script><script type="math/tex; mode=display">
+\left.
+\begin{matrix}
+x \in (x_0-\delta,x_0),f'(x)>0 \\
+x \in (x_0,x_0+\delta),f'(x)<0 \\
+\end{matrix}
+\right\}\Rightarrow f(x)在x=x_0处取得极大值</script><script type="math/tex; mode=display">
+\left.
+\begin{matrix}
+x \in (x_0-\delta,x_0),f'(x)<0 \\
+x \in (x_0,x_0+\delta),f'(x)>0 \\
+\end{matrix}
+\right\}\Rightarrow f(x)在x=x_0处取得极小值</script><script type="math/tex; mode=display">
+若左邻域,右邻域,一阶导数符号不变,f(x)在x=x_0处不取极值</script><h3 id="定理三"><a href="#定理三" class="headerlink" title="定理三"></a>定理三</h3><script type="math/tex; mode=display">
+设f(x)在x=x_0处f'(x)=0,f''(x_0)存在f''(x_0)\ne0</script><script type="math/tex; mode=display">
+f''(x_0)<0\Leftrightarrow f(x)在x_0处取得极大值</script><script type="math/tex; mode=display">
+f''(x_0)>0\Leftrightarrow f(x)在x_0处取得极小值</script><h2 id="最值"><a href="#最值" class="headerlink" title="最值"></a>最值</h2><script type="math/tex; mode=display">
+f(x)在U上有定义,\exists x_0\in U,使得\forall x\in U都有：</script><script type="math/tex; mode=display">
+f(x)\leq f(x_0)\Rightarrow f(x_0)为f(x)在U上的最大值</script><script type="math/tex; mode=display">
+f(x)\geq f(x_0)\Rightarrow f(x_0)为f(x)在U上的最大值</script><div class="note note-info">
+            <p>最值不一定是极值，极值不一定是最值</p>
+          </div>
+<h2 id="不等式链"><a href="#不等式链" class="headerlink" title="不等式链"></a>不等式链</h2><script type="math/tex; mode=display">
+\frac{2}{\frac{1}{x}+\frac{1}{y}}\leq\sqrt{xy}\leq\frac{x+y}{2}\leq\sqrt{\frac{x^2+y^2}{2}}</script><h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><h4 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h4><script type="math/tex; mode=display">
+m,n>0且m+n-2\sqrt{3}=0,则mn的最大值为?</script><script type="math/tex; mode=display">
+解法一:[基本不等式]</script><script type="math/tex; mode=display">
+m+n=2\sqrt{3}</script><script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+\sqrt{mn}&\leq\frac{m+n}{2}\\
+mn&\leq(\frac{m+n}{2})^2\\
+mn&\leq(\frac{2\sqrt{3}}{2})^2\\
+mn&\leq3\\
+当且仅当m=n时取等\\
+max(mn)=3
+\end{aligned}
+\end{equation}</script><hr>
+<script type="math/tex; mode=display">
+解法二:[拉格朗日数乘]</script><script type="math/tex; mode=display">
+使用前提:\\
+函数最值存在，若函数本身不存在最值，则此法的解皆不是最值\\
+约束条件没有边界\\
+约束函数需具有一阶连续偏导数，且约束函数的梯度向量不为0</script><script type="math/tex; mode=display">
+f=mn\\
+\\
+g=m+n-2\sqrt{3}=0\\
+\\
+h=f-\lambda g\\
+\\
+\frac{\partial h}{\partial m}=0\\</script><script type="math/tex; mode=display">
+\frac{\partial h}{\partial n}=0\\
+\\
+\left\{
+\begin{aligned}
+g&=&0&  \\
+\frac{\partial h}{\partial m}&=&0&  \\
+\frac{\partial h}{\partial n}&=&0&  \\
+\end{aligned}
+\right.
+\\
+\left\{
+\begin{aligned}
+\lambda&=&\sqrt{3}&  \\
+m&=&\sqrt{3}&  \\
+n&=&\sqrt{3}&  \\
+\end{aligned}
+\right.
+\\
+代入f即可求出极值，后可求最值\\</script>
                 
               </div>
             
@@ -358,7 +408,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" class="print-no-link">#备忘录</a>
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
       
     </div>
   
@@ -370,8 +420,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Minecraft-java-Forge-mod开发</div>
-      <div>https://yesandnoandperhaps.github.io/2024/06/11/mcjava/</div>
+      <div>极值-最值</div>
+      <div>https://yesandnoandperhaps.github.io/2024/06/17/sx3/</div>
     </div>
     <div class="license-meta">
       
@@ -383,7 +433,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月11日</div>
+          <div>2024年6月17日</div>
         </div>
       
       
@@ -455,7 +505,7 @@
         var options = Object.assign(
           {"clientID":"Ov23lihL8rs6IRv6eu2M","clientSecret":"82f5099f7b8f3417a12e29146aec687270b8ce20","repo":"talk","owner":"yesandnoandperhaps","admin":["yesandnoandperhaps"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"first","distractionFreeMode":true,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: 'c13e8585c742e816caf17349cffe0c34'
+            id: '260273df218db2d352f8d38ba1c7bcbc'
           }
         )
         var gitalk = new Gitalk(options);
@@ -517,6 +567,26 @@
 
   
 
+
+  
+  
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 
